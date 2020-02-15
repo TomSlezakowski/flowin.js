@@ -2,7 +2,7 @@ import Calculator from './Calculator';
 
 export default class VideoFlowin {
   constructor(props) {
-    const { element, quality } = props;
+    const { element, quality, callback } = props;
     this.element = element;
     this.calculator = new Calculator({
       quality: quality,
@@ -15,6 +15,9 @@ export default class VideoFlowin {
     };
 
     this.callbacks = [];
+    if (callback) {
+      this.callbacks.push(callback);
+    }
     this.updateBind = this.update.bind(this);
   }
 
