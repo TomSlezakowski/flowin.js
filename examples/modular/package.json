@@ -2,9 +2,8 @@
   "name": "flowin",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/flowin/index.js",
+  "main": "./src/index.js",
   "dependencies": {
-    "gpu.js": "^2.6.7",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   },

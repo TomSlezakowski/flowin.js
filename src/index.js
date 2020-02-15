@@ -1,5 +1,1 @@
-module.exports = {
-    Camera: require('./Camera'),
-    Zone: require('./Zone'),
-    Math: require('./Math'),
-}
+export const Camera = require('./Camera').Camera;

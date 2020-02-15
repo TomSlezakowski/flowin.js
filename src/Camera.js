@@ -1,5 +1,6 @@
+import VideoFlowin from './VideoFlowin';
 
-class Camera {
+export class Camera {
   constructor(props) {
     this.params = Object.assign({
       quality: 4,
@@ -15,8 +16,8 @@ class Camera {
 
     this.videoSource = null;
 
-    this._onCameraConnected = (stream) {
-      const bind = this._onFlowReceived.bind(this);
+    this._onCameraConnected = (stream) => {
+      const flowBind = this._onFlowReceived.bind(this);
       this.state.capturing = true;
 
       if ("srcObject" in this.videoElement) {
@@ -27,14 +28,19 @@ class Camera {
       if (stream) {
         this.videoElement.play();
         this.state.currentFlow.start();
-        this.state.currentFlow.onCalculated()
+        this.state.currentFlow.onCalculated(flowBind);
       }
     }
 
     this._onFlowReceived = (flow) => {
+      const { callback } = this.params;
       if (callback) {
         callback(flow);
       }
+    }
+
+    this._onWebCamError = (error) => {
+      console.warn('Error capturing WebCam device.', error);
     }
 
     this._startCapture = () => {
@@ -44,7 +50,11 @@ class Camera {
         const elem = this.params.element || window.document.createElement('video');
         elem.setAttribute('autoplay', true);
         this.videoElement = elem;
-        const flow = new VideoFlowin(elem, this.params.quality);
+        const flowParams = {
+          element: elem,
+          quality: this.params.quality,
+        };
+        const flow = new VideoFlowin(flowParams);
         this.state.currentFlow = flow;
       }
 
@@ -69,7 +79,7 @@ class Camera {
           };
           navigator.mediaDevices.getUserMedia(mediaProps)
             .then(this._onCameraConnected.bind(this))
-            .catch(onWebCamFail);
+            .catch(this._onWebCamError.bind(this));
         });
       } else if(navigator.mediaDevices.enumerateDevices) {
         navigator.mediaDevices.enumerateDevices().then((sources) => {
@@ -89,7 +99,7 @@ class Camera {
           };
           navigator.mediaDevices.getUserMedia(mediaProps)
             .then(this._onCameraConnected.bind(this))
-            .catch(onWebCamFail);
+            .catch(this._onWebCamError.bind(this));
         });
       }
     }
@@ -114,5 +124,3 @@ class Camera {
     }
   }
 }
-
-export default Camera;
