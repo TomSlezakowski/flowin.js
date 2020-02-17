@@ -31,13 +31,14 @@ or
     },
   });
   flowin.start();
+```
 
-  ## Development
-  If you have any fixes, suggestions or just want to add something to this lib, feel free. To run the project;
-  Using Node 10.16.0, `npm install` then `npm run dev`.
+## Development
+If you have any fixes, suggestions or just want to add something to this lib, feel free. To run the project;
+Using Node 10.16.0, `npm install` then `npm run dev`.
 
-  To run a minified production build, just run `npm run build`
+To run a minified production build, just run `npm run build`
 
-  ## Issues
-  Please post any and all issues [https://github.com/TomSlezakowski/flowin/issues](here)
+## Issues
+Please post any and all issues [https://github.com/TomSlezakowski/flowin/issues](here)
 
