@@ -43,6 +43,9 @@ Using Node 10.16.0, `npm install` then `npm run dev`.
 
 To run a minified production build, just run `npm run build`
 
+## Examples
+Within the [examples](examples/) directory, there are two basic demo's showing how to build for webcam vs video processing.
+
 ## Issues
 Please post any and all issues [here](https://github.com/TomSlezakowski/flowin/issues)
 
