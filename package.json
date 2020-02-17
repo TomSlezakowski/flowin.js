@@ -1,5 +1,5 @@
 {
-  "name": "flowin",
+  "name": "flowin.js",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/flowin/index.js",
@@ -14,7 +14,8 @@
     "babel-loader": "^8.0.6"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "dev": "webpack --config webpack.config.js --env=development",
+    "build": "webpack --config webpack.config.js --env=production"
   },
   "repository": {
     "type": "git",
