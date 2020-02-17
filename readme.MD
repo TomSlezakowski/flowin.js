@@ -40,5 +40,5 @@ Using Node 10.16.0, `npm install` then `npm run dev`.
 To run a minified production build, just run `npm run build`
 
 ## Issues
-Please post any and all issues [https://github.com/TomSlezakowski/flowin/issues](here)
+Please post any and all issues [here](https://github.com/TomSlezakowski/flowin/issues)
 
