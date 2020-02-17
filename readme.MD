@@ -1,8 +1,12 @@
 # Flowin.js
 
-## Usage
-Flowin.js is a basic ES6 module to generate optical flow vectors for video.
+### A basic ES6 class to generate optical flow vectors from video. Fast an efficient, flowin.js seeks to use minimal resources and memory footprint while remaining mobile compatible.
 
+## Built with
+- [GPU.js](https://github.com/gpujs/gpu.js/)
+- [Webpack](https://github.com/webpack/webpack)
+
+## Usage
 There are a couple of ways to use this library, via script inclusion;
 ```
   <script src="./dist/flowin.js"></script>
