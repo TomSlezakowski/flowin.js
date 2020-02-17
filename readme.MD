@@ -1,6 +1,6 @@
 # Flowin.js
 
-### A basic ES6 class to generate optical flow vectors from video. Fast an efficient, flowin.js seeks to use minimal resources and memory footprint while remaining mobile compatible.
+### A basic ES6 class to generate optical flow vectors from video. Fast and efficient, Flowin.js seeks to use minimal resources and memory footprint while remaining mobile compatible.
 
 ## Built with
 - [GPU.js](https://github.com/gpujs/gpu.js/)
